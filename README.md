@@ -33,8 +33,8 @@ overhead.
 
 2.  Use the lookup functions:
 
+    <!-- snips: examples/readme.rs#example -->
     ```rust
-    // Look up by extension
     let lang = languages::from_extension("rs").unwrap();
     assert_eq!(lang.name, "Rust");
     assert_eq!(lang.language_type, "programming");
@@ -42,7 +42,7 @@ overhead.
 
     // Look up by name (case-insensitive)
     let python = languages::from_name("Python").unwrap();
-    assert_eq!(python.extensions, Some(&[".py", ".pyw", ".pyi", ".ipynb"]));
+    assert!(python.extensions.unwrap().contains(&".py"));
 
     // Look up by alias
     let cpp = languages::from_name("cpp").unwrap();
@@ -57,6 +57,13 @@ This crate uses a `build.rs` script that parses `languages.yml` and generates
 the necessary Rust code. To update the language data to the latest version from
 GitHub, simply run the `download_languages.sh` script and recompile your
 project.
+
+# Related Projects
+
+This library was written to be used in the
+[snips](https://github.com/cortesi/snips) tool, which is also used to maintain
+the code examples in this README.
+
 
 # License and Acknowledgements
 
