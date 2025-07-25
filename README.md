@@ -52,3 +52,11 @@ This crate uses a `build.rs` script that parses `languages.yml` and generates
 the necessary Rust code. To update the language data to the latest version from
 GitHub, simply run the `download_languages.sh` script and recompile your
 project.
+
+# License and Acknowledgements
+
+The code for the languages crate is licensed under the MIT License.
+
+The language data is sourced from the [GitHub
+Linguist](https://github.com/github-linguist/linguist) project, which is
+distributed under the MIT license and is copyright of GitHub, Inc.
