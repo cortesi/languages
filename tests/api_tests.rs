@@ -36,7 +36,8 @@ fn test_from_extension_case_insensitive() {
 
 #[test]
 fn test_from_codemirror_mode() {
-    let lang = languages::from_codemirror_mode("javascript").expect("Could not find by codemirror mode");
+    let lang =
+        languages::from_codemirror_mode("javascript").expect("Could not find by codemirror mode");
     assert_eq!(lang.name, "JavaScript");
 }
 
