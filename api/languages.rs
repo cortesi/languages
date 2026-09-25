@@ -29,6 +29,14 @@ use std::{collections::HashMap, fmt::Debug};
 
 use once_cell::sync::Lazy;
 
+pub const ALL_LANGUAGES: &[Language] = _;
+
+pub static CODEMIRROR_MODE_MAP: Lazy<HashMap<&'static str, &'static Language>> = _;
+
+pub static EXTENSION_MAP: Lazy<HashMap<&'static str, &'static Language>> = _;
+
+pub static NAME_MAP: Lazy<HashMap<&'static str, &'static Language>> = _;
+
 #[derive(Clone, Debug, Eq, PartialEq)]
 pub struct Language {
     pub name: &'static str,
@@ -60,11 +68,3 @@ pub fn from_extension(extension: &str) -> Option<&'static Language>;
 ///
 /// The lookup is case-insensitive.
 pub fn from_name(name: &str) -> Option<&'static Language>;
-
-pub const ALL_LANGUAGES: &[Language] = _;
-
-pub static CODEMIRROR_MODE_MAP: Lazy<HashMap<&'static str, &'static Language>> = _;
-
-pub static EXTENSION_MAP: Lazy<HashMap<&'static str, &'static Language>> = _;
-
-pub static NAME_MAP: Lazy<HashMap<&'static str, &'static Language>> = _;
